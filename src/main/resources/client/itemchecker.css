@@ -1,0 +1,50 @@
+@url HARTING harting;
+
+
+/** Add css rules here for your application. */
+html,body,body>iframe {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	overflow: hidden;
+}
+
+.wait {
+	background-image: url(wait.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	font-size: 1em;
+}
+
+html {
+	font-family: Arial;
+	font-size: 1.4em;
+}
+
+@media screen and (min-width: 550px) {
+	html {
+		font-size: 1.8em;
+	}
+}
+
+*::selection {
+	background: transparent;
+}
+
+*:focus {
+	outline: 0 !important;
+}
+
+body {
+	margin: 0;
+}

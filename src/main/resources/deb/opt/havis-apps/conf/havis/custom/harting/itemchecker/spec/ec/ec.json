@@ -1,0 +1,81 @@
+{
+  "eventCycle": {
+    "spec": {
+      "logicalReaders": {
+        "logicalReader": [
+          "BuiltIn"
+        ]
+      },
+      "boundarySpec": {
+        "startTrigger": null,
+        "repeatPeriod": {
+          "value": 0,
+          "unit": "MS"
+        },
+        "stopTrigger": null,
+        "duration": {
+          "value": 1000,
+          "unit": "MS"
+        },
+        "stableSetInterval": null,
+        "extension": {
+                "startTriggerList": {
+                    "startTrigger": ["urn:havis:ale:trigger:http:ItemCheckerStart"]
+                },
+                "stopTriggerList": {
+                    "stopTrigger": ["urn:havis:ale:trigger:http:ItemCheckerStop"]
+                },
+                "whenDataAvailable": false,
+                "extension": null
+            }
+      },
+      "reportSpecs": {
+        "reportSpec": [
+          {
+            "reportSet": {
+              "set": "ADDITIONS"
+            },
+            "filterSpec": null,
+            "groupSpec": null,
+            "output": {
+              "extension": null,
+              "includeEPC": true,
+              "includeTag": true,
+              "includeRawHex": true,
+              "includeRawDecimal": true,
+              "includeCount": false
+            },
+            "extension": null,
+            "reportName": "ItemChecker",
+            "reportIfEmpty": false,
+            "reportOnlyOnChange": false
+          }
+        ]
+      },
+      "extension": null,
+      "any": [],
+      "schemaVersion": null,
+      "creationDate": null,
+      "includeSpecInReports": false
+    },
+    "extension": null,
+    "any": null,
+    "name": "ItemChecker",
+    "baseExtension": null,
+    "schemaVersion": null,
+    "creationDate": null,
+    "enable": true
+  },
+  "subscribers": [
+  {
+    "uri": "queue://itemchecker",
+    "extension": null,
+    "any": null,
+    "name": "queue://itemchecker",
+    "baseExtension": null,
+    "schemaVersion": null,
+    "creationDate": null,
+    "enable": true
+  }
+  ]
+}

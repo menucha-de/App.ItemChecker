@@ -1,0 +1,5 @@
+{
+  "encoding" : "EPC_TAG",
+  "quantity" : false,
+  "delimiter" : "EXCEL_NORTH_EUROPE_PREFERENCE"
+}

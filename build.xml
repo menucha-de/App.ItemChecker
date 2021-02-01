@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project name="havis.custom.harting.itemchecker" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+
+	<property file="${basedir}/build.properties" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+
+	<firstmatchmapper id="mapper">
+		<globmapper from="${build.dir}/*.jar" to="${dst.dir}/bundle/50_*.jar" />
+		<globmapper from="${build.dir}/*.js" to="${build.dir}/client/*.js" />
+	</firstmatchmapper>
+	
+	<target name="clean-cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all">
+		<clean-all />
+	</target>
+
+	<target name="compile">
+		<compile dst="${build.dir.classes}">
+			<src path="${src.main.dir}" />
+		</compile>
+		<compile-gwt dst="${build.dir}/client" modules="havis.custom.harting.itemchecker.ui.ItemCheckerUIHandheld" />
+		<compile-gwt modules="havis.custom.harting.itemchecker.ui.ItemCheckerUI" />
+	</target>
+
+	<target name="jar" depends="compile">
+		<compile-gwt />
+		<jar-bin />
+	</target>
+
+	<target name="client" depends="jar">
+		<client>
+			<ivy:retrieve pattern="${build.dir}/client/[artifact].[ext]" conf="client" />
+		</client>
+	</target>
+	
+	<target name="app" depends="jar">
+		<app name="havis.itemchecker" />
+	</target>
+
+	<target name="standalone" depends="jar">
+		<client base="" zip="true" />
+		<standalone mapper="mapper" />
+		<extract name="havis.middleware.app" />
+	</target>
+
+	<target name="publish" depends="app, client">
+		<publish jar="false" app="false" />
+	</target>
+
+</project>

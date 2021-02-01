@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with type="havis.custom.harting.itemchecker.ui.resourcebundle.AppResources" field="res"></ui:with>
+	
+	<ui:with
+		type="havis.custom.harting.itemchecker.ui.resourcebundle.AppResources"
+		field="resItem" />
+	<ui:style>
+		
+		.handheld-header {
+			height:75px;
+		}
+				
+		.handheld-header > tr > td,
+		.handheld-header > tbody > tr > td {
+			vertical-align: middle;
+			padding: 0.25em;
+		}
+		.handheld-header > tr > td:nth-child\(1\),
+		.handheld-header > tbody > tr > td:nth-child\(1\){
+			width:100%;
+		}
+	</ui:style>
+	
+	<g:HorizontalPanel ui:field="header" addStyleNames="{style.handheld-header}" verticalAlignment="middle">
+		<g:Label ui:field="title" addStyleNames="{resItem.css.title}"/>
+		<g:HorizontalPanel ui:field="buttons"/>
+	</g:HorizontalPanel>
+</ui:UiBinder> 

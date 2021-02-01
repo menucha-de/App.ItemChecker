@@ -1,0 +1,164 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+xmlns:l="urn:import:havis.net.ui.shared.client.list"
+	xmlns:u="urn:import:havis.net.ui.shared.client.upload"	
+	xmlns:w="urn:import:havis.custom.harting.itemchecker.ui.handheld.widgets">
+	
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle"
+		field="res" />
+	<ui:with type="havis.net.ui.shared.resourcebundle.ConstantsResource"
+		field="langGlobal" />
+	<ui:with
+		type="havis.custom.harting.itemchecker.ui.resourcebundle.ConstantsResource"
+		field="langLocal" />
+	<ui:with
+		type="havis.custom.harting.itemchecker.ui.resourcebundle.AppResources"
+		field="local"></ui:with>		
+	<ui:with
+		type="havis.custom.harting.itemchecker.ui.resourcebundle.ConstantsResource"
+		field="i18n" />
+	<ui:with
+		type="havis.custom.harting.itemchecker.ui.resourcebundle.AppResources"
+		field="resItem" />
+	
+		<ui:style>	
+	.tags-list {
+		width: 100%;
+		margin-left: 0em;
+		display: block;
+		margin-right: 0em;
+		overflow:auto;
+		height:500px;
+		max-height:500px;
+		border-bottom:1px solid lightgray;
+	}
+	.tags-list > div > div {
+		overflow:visible !important;
+	}
+
+	.tags-list>div>table:first-child {
+		border-bottom: 1px solid lightgrey;
+		text-align: left;
+	}
+	
+	.tags-list>div table td {
+		text-align: left;
+		font-size: 1.0em;		
+	}
+	.tags-list>div table td > div{
+		overflow:hidden;
+		text-overflow:ellipsis;
+		font-size:0.8em;
+	}
+	
+	.tags-list>div>table:first-child td {
+		font-weight: bold;
+		line-height: 2em;
+	}
+	
+	.tags-list>div>div table:last-child td {
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+	
+	.button-label {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		font-size: 1.0em;
+		font-weight: bold;
+		border-left: 1px solid lightgrey;		
+		margin-left: 0.3em;
+		height: 2em;
+	}
+	
+	.tag-count-label {
+		font-size: 1.7em;
+		font-weight: bold;
+		border-left: 1px solid lightgrey;
+		text-align: center;
+		width: 180px;
+		margin-left: 0.3em;
+	}
+
+	.tag-count-label.current {
+		color: black;
+	}
+	
+	.tag-count-label.absolute {
+		color: graytext;
+	}
+	
+	.tag-count-label .kind {
+		font-size: 0.4em;
+		position: relative;
+		left: 0em;
+		top: -1.5em;
+	}
+	
+	.monitor {
+		margin-top: 0 !important;
+		padding: 0.5em 0.5em 0.5em 0.3em !important;
+		border-bottom: 1px solid lightgrey;
+	}
+	
+	.lowercase {
+		text-transform: lowercase;
+	}
+	
+	.monitor-button {
+		width: 10em !important;
+	}
+	
+	.btnLabel{
+	    margin-top: 0.3em;
+    	margin-left: 0.3em;
+	}
+		
+	.scan{
+		text-align:center;
+		margin-top: 0.3em;
+	}
+	
+	.scanbutton{
+		display: inline-block;
+		padding: 0.7em 0.5em;
+		border-radius: 2.1em;
+		box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
+		cursor:pointer;
+		font-weight:bold;
+		width:210px;
+	}
+	.popup{
+		display:none;
+	}
+	</ui:style>
+	<g:FlowPanel>
+		<g:Label ui:field="popup" addStyleNames="{style.popup} {resItem.css.popupPanel}"/>
+		<w:Header ui:field="header" title="{i18n.itemCheckerLabel}" />
+		<g:FlowPanel ui:field="monitorPanel">
+			<g:FlowPanel addStyleNames="{style.monitor} {res.css.inventoryPanel} {res.css.row}">
+				<g:HTMLPanel
+					addStyleNames="{style.tag-count-label} {style.current} {style.lowercase}">
+					<g:InlineLabel ui:field="countFound">0</g:InlineLabel>
+					<span class="{style.kind}">
+						<ui:text from="{langLocal.found}" />
+					</span>
+				</g:HTMLPanel>
+				<g:HTMLPanel addStyleNames="{style.tag-count-label} {style.absolute}">
+					<g:InlineLabel ui:field="countLeft">0</g:InlineLabel>
+					<span class="{style.kind}">
+						<ui:text from="{langLocal.left}" />
+					</span>
+				</g:HTMLPanel>
+				<g:HTMLPanel addStyleNames="{style.button-label} {style.absolute}">
+					<g:Button ui:field="refresh" styleName="{local.css.refreshButton}" />
+				</g:HTMLPanel>
+			</g:FlowPanel>
+			<l:WidgetList ui:field="tagsList" addStyleNames="{style.tags-list}" />
+		</g:FlowPanel>
+		<g:SimplePanel addStyleNames="{style.scan}">
+			<g:Label addStyleNames="{style.scanbutton} {resItem.css.yellow}" ui:field="scanButton" ui:text="{langLocal.startScanning}" />			
+		</g:SimplePanel>
+	</g:FlowPanel>
+</ui:UiBinder> 
