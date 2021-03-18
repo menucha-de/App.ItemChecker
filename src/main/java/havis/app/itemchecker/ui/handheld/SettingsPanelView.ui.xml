@@ -1,0 +1,87 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+xmlns:w="urn:import:havis.app.itemchecker.ui.handheld.widgets">		
+	<ui:with
+		type="havis.app.itemchecker.ui.resourcebundle.ConstantsResource"
+		field="i18n" />
+	<ui:with
+		type="havis.app.itemchecker.ui.resourcebundle.AppResources"
+		field="res" />
+
+	<ui:style>
+		.table{
+			width:100%;
+			
+		}
+		.table tr td:nth-child\(1\){
+			width:80px;
+		}
+		
+		.columns > table{
+			margin-top: 10px;
+		}
+		
+		.columns > table:nth-child\(1\) {
+			margin-top:0;
+		}
+		
+		.settings{
+			padding: 0 10px;
+			max-width:440px;
+		}
+	</ui:style>
+
+	<g:FlowPanel>
+		<w:Header ui:field="header" title="{i18n.informationLabel}" />
+		<g:FlowPanel addStyleNames="{style.settings}">
+			<g:HTMLPanel styleName="{res.css.fragment}">
+				<g:Label ui:field="gatewayHostLabel" text="{i18n.gatewayHostLabel}"
+					styleName="{res.css.labelSpace} {res.css.labelSpace}" />
+				<g:TextBox ui:field="gatewayHostTextBox" tabIndex="1"
+					styleName="{res.css.webuiTextBox} " />
+			</g:HTMLPanel>
+	
+			<g:HTMLPanel styleName="{res.css.fragment}">
+				<g:Label ui:field="wlanStatusLabel" text="{i18n.wlanStatusLabel}"
+					styleName="{res.css.labelSpace} {res.css.labelSpace}" />
+				<g:HorizontalPanel addStyleNames="{style.table}">
+					<g:ToggleButton ui:field="wlanStatusToggleButton" enabled="false" tabIndex="2" />
+					<g:TextBox ui:field="wlanStatusTextBox" tabIndex="3"
+					styleName="{res.css.webuiTextBox} "
+					enabled="false" readOnly="true" />
+				</g:HorizontalPanel>
+			</g:HTMLPanel>
+	
+			<g:HTMLPanel styleName="{res.css.fragment}">
+				<div style="clear: left; padding: 0;"></div>
+				<g:Label ui:field="batteryStatusLabel" text="{i18n.batteryStatusLabel}"
+					styleName="{res.css.labelSpace} {res.css.labelSpace}" />
+				<w:ProgressBar ui:field="batteryStatusProgressBar" />
+			</g:HTMLPanel>
+	
+			<g:HTMLPanel styleName="{res.css.fragment}">
+				<g:Label ui:field="versionLabel" text="{i18n.versionLabel}"
+					styleName="{res.css.labelSpace} {res.css.labelSpace}" />
+				<g:TextBox ui:field="versionTextBox" tabIndex="4"
+					styleName="{res.css.webuiTextBox} " enabled="false"
+					readOnly="true" />
+			</g:HTMLPanel>
+						
+			<g:HTMLPanel styleName="{res.css.fragment}">
+				<g:Label ui:field="columnsLabel" text="{i18n.columnsLabel}"
+					styleName="{res.css.labelSpace} {res.css.labelSpace}" />
+				<g:FlowPanel ui:field="columnsFrame" addStyleNames="{style.columns}" />
+			</g:HTMLPanel>
+		</g:FlowPanel>
+		
+		
+		<g:FlowPanel styleName="{res.css.toolbarInformation}">
+			<g:FlowPanel>
+				<g:Button ui:field="okButton" text="{i18n.okButtonLabel}"
+					styleName="{res.css.informationOk}" />
+				<g:Button ui:field="escButton" text="{i18n.escButtonLabel}"
+					styleName="{res.css.informationEsc}" />
+			</g:FlowPanel>
+		</g:FlowPanel>		
+	</g:FlowPanel>
+</ui:UiBinder> 

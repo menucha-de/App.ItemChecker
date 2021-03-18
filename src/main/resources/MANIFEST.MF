@@ -1,13 +1,13 @@
 Bundle-Name: Ha-VIS Custom Item Checker App
-Bundle-SymbolicName: havis.custom.harting.itemchecker
+Bundle-SymbolicName: havis.app.itemchecker
 Bundle-Version: 2.7.0
 Application-Name: Item Checker
 Implementation-Version: 2.7
 Bundle-ManifestVersion: 2
-Bundle-Vendor: HARTING IT_SD
+Bundle-Vendor: Menucha Team <info@menucha.de>
 Havis-Bundle: 
- /OSGI-INF/havis.custom.harting.itemchecker.properties
-Bundle-Activator: havis.custom.harting.itemchecker.osgi.Activator
+ /OSGI-INF/havis.app.itemchecker.properties
+Bundle-Activator: havis.app.itemchecker.osgi.Activator
 Import-Package: 
  com.fasterxml.jackson.databind,
  havis.middleware.ale.base.exception,

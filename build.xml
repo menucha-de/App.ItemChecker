@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="havis.custom.harting.itemchecker" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+<project name="havis.app.itemchecker" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
 
 	<property file="${basedir}/build.properties" />
 
@@ -24,8 +24,8 @@
 		<compile dst="${build.dir.classes}">
 			<src path="${src.main.dir}" />
 		</compile>
-		<compile-gwt dst="${build.dir}/client" modules="havis.custom.harting.itemchecker.ui.ItemCheckerUIHandheld" />
-		<compile-gwt modules="havis.custom.harting.itemchecker.ui.ItemCheckerUI" />
+		<compile-gwt dst="${build.dir}/client" modules="havis.app.itemchecker.ui.ItemCheckerUIHandheld" />
+		<compile-gwt modules="havis.app.itemchecker.ui.ItemCheckerUI" />
 	</target>
 
 	<target name="jar" depends="compile">

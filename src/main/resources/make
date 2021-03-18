@@ -4,7 +4,7 @@
 
 APP=$(realpath $0)
 
-NAME=havis.custom.harting.itemchecker
+NAME=havis.app.itemchecker
 INFO=/opt/havis-apps/info
 EXIT=0
 

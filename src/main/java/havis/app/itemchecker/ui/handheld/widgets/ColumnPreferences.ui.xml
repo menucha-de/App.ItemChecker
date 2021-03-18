@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with type="havis.app.itemchecker.ui.resourcebundle.AppResources" field="res"></ui:with>
+	<ui:style>
+	
+	
+	.padding{
+		padding-left:10px;
+	}
+	.integer{
+		width:4em;
+	}
+	.table{
+		width:100%;	
+	}
+	.table > tbody > tr > td {
+		width:50%;
+	}
+	
+	</ui:style>
+	
+	<g:HorizontalPanel verticalAlignment="middle" addStyleNames="{style.table}">
+		<g:HorizontalPanel verticalAlignment="middle">
+			<g:ToggleButton ui:field="enabled" />
+			<g:Label ui:field="name" addStyleNames="{style.padding}" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel verticalAlignment="middle">
+			<g:IntegerBox ui:field="relativeWitdh" addStyleNames="{res.css.webuiTextBox} {style.integer}" />
+			<g:Label ui:text="Width" addStyleNames="{style.padding}" />
+		</g:HorizontalPanel>
+	</g:HorizontalPanel>
+</ui:UiBinder> 
