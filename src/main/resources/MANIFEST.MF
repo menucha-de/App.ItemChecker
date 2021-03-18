@@ -1,8 +1,8 @@
 Bundle-Name: Ha-VIS Custom Item Checker App
 Bundle-SymbolicName: havis.custom.harting.itemchecker
-Bundle-Version: 2.6.0
+Bundle-Version: 2.7.0
 Application-Name: Item Checker
-Implementation-Version: 2.6
+Implementation-Version: 2.7
 Bundle-ManifestVersion: 2
 Bundle-Vendor: HARTING IT_SD
 Havis-Bundle: 
